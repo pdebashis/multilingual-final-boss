@@ -1,0 +1,624 @@
+# Build `multilingual-final-boss`
+A complete, polished, responsive static language-learning website called **“Multilingual Final Boss”**.
+
+## IMPORTANT ENVIRONMENT RULES
+
+This project is a **React + TypeScript + Vite** project.
+
+The development environment is **WSL (openSUSE Leap 15.6)**.
+
+Use the **Node.js/npm environment available inside WSL**.
+
+All development, dependency installation, testing, linting, and builds should use npm/Node commands.
+
+Before making assumptions about available commands, inspect `package.json`.
+
+Use the scripts defined in `package.json`, such as:
+
+```bash
+npm install
+npm run dev
+npm run build
+```
+
+Do not invent Python tests simply because a `tests` directory exists.
+
+When validating the project, prioritize:
+
+```bash
+npm run build
+```
+
+and any test/lint/typecheck scripts actually defined in `package.json`.
+
+---
+
+# Technology
+
+Use:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* Client-side routing
+* LocalStorage for persistence
+
+No backend.
+
+No database.
+
+No authentication.
+
+No external API.
+
+The application must run entirely as a static frontend.
+
+---
+
+# Source of Truth: CSV
+
+The project contains:
+
+```text
+language_vocabulary.csv
+```
+
+This CSV is the **MASTER SOURCE OF TRUTH** for all vocabulary.
+
+Columns:
+
+```text
+category,english,hindi,odia,bengali,chinese,pinyin
+```
+
+Do **not** hard-code vocabulary entries into React components.
+
+Create a CSV loading/parsing layer that converts the CSV into internal TypeScript objects.
+
+Adding a new row to the CSV must automatically make that vocabulary available to:
+
+* categories
+* search
+* practice
+* vocabulary details
+* statistics
+
+Do not silently invent, remove, or modify vocabulary data.
+
+Handle blank cells gracefully.
+
+Preserve Unicode characters, including Chinese.
+
+The application must correctly support UTF-8 CSV data.
+
+---
+
+# Vocabulary Data Model
+
+Internally represent vocabulary approximately as:
+
+```ts
+{
+  id: string;
+  category: string;
+  english: string;
+  hindi: string;
+  odia: string;
+  bengali: string;
+  chinese: string;
+  pinyin: string;
+}
+```
+
+IDs must be deterministic and stable.
+
+Generate IDs from category + English rather than random IDs.
+
+For example:
+
+```text
+pronouns + I → pronouns-i
+```
+
+Do not generate a new random ID every time the application starts.
+
+---
+
+# Languages
+
+Support these six language fields:
+
+1. English
+2. Hindi
+3. Odia
+4. Bengali
+5. Chinese
+6. Chinese Pinyin
+
+The UI should clearly distinguish:
+
+* Chinese characters as the primary Chinese representation
+* Pinyin as pronunciation/supporting information
+
+Chinese should generally be displayed at a larger font size.
+
+---
+
+# Homepage
+
+Create a polished dashboard for **Multilingual Final Boss**.
+
+The homepage should contain:
+
+### Header
+
+* Application name
+* Simple navigation
+* Responsive mobile navigation
+
+Navigation:
+
+* Home
+* Practice
+* Search
+* Categories
+
+### Main actions
+
+Prominent cards/buttons for:
+
+* **Practice Memory**
+* **Search Vocabulary**
+* **Browse Categories**
+
+### Category overview
+
+Generate category cards dynamically from the CSV.
+
+Each card should show:
+
+* category name
+* number of vocabulary items
+* useful visual treatment/icon
+
+Do NOT hard-code the category list.
+
+If a new category is added to the CSV, it should automatically appear.
+
+---
+
+# Category View
+
+Create a category page for every category discovered from the CSV.
+
+Each category page should contain:
+
+* Category name
+* Number of words
+* Search/filter within the category
+* Vocabulary table
+
+Desktop table columns:
+
+```text
+English | Hindi | Odia | Bengali | Chinese | Pinyin
+```
+
+Sort vocabulary alphabetically by English by default.
+
+Rows should be clickable.
+
+Clicking a row opens an expanded vocabulary detail view.
+
+On mobile, replace the large table with responsive vocabulary cards.
+
+---
+
+# Vocabulary Detail
+
+When a vocabulary item is selected, show:
+
+* English
+* Hindi
+* Odia
+* Bengali
+* Chinese
+* Pinyin
+* Category
+
+Chinese should be visually prominent.
+
+Pinyin should appear as supporting pronunciation text.
+
+The detail view should be clean and easy to scan.
+
+---
+
+# Search
+
+Create a global vocabulary search page.
+
+Search across:
+
+* English
+* Hindi
+* Odia
+* Bengali
+* Chinese
+* Pinyin
+
+Search should be:
+
+* case-insensitive for Latin text
+* direct for Chinese
+* tolerant of surrounding whitespace
+* normalized appropriately
+
+Prioritize exact matches before partial matches.
+
+Each result should display enough information to identify the vocabulary item.
+
+Clicking a result opens the vocabulary detail.
+
+Search must use the CSV-derived dataset rather than a separate hard-coded search index.
+
+---
+
+# Memory Practice
+
+Create:
+
+```text
+/practice
+```
+
+The practice screen should show one random vocabulary item.
+
+Initially reveal only the selected prompt language/word.
+
+For example:
+
+```text
+English
+
+"Drink"
+```
+
+The user must think of the translations before revealing the answer.
+
+Provide:
+
+**Reveal**
+
+After Reveal, show all translations:
+
+```text
+English
+Drink
+
+Hindi
+Pi
+
+Odia
+Pia
+
+Bengali
+Piyo
+
+Chinese
+喝
+
+Pinyin
+hē
+```
+
+Then provide:
+
+* **Got it**
+* **Again**
+
+---
+
+# Practice Directions
+
+Allow the user to select the practice direction:
+
+* Random
+* English → Other languages
+* Hindi → Other languages
+* Odia → Other languages
+* Bengali → Other languages
+* Chinese → Other languages
+
+The selected direction determines which language is shown initially.
+
+---
+
+# Practice Categories
+
+Allow practice to be restricted to categories.
+
+The category selector must be generated dynamically from the CSV.
+
+Do not hard-code category names.
+
+Options should include:
+
+* All categories
+* Individual categories discovered from CSV
+
+---
+
+# Avoid Repetition
+
+Provide a setting:
+
+* Off
+* Last 5
+* Last 10
+
+Use LocalStorage to remember recently seen vocabulary.
+
+When repetition avoidance is enabled, avoid showing recently practiced words where possible.
+
+If the available pool is exhausted, gracefully allow previously seen words again.
+
+Do not make the application get stuck because every word is excluded.
+
+---
+
+# Progress
+
+Track practice progress using LocalStorage.
+
+Track:
+
+* Words practiced
+* Got it
+* Again
+* Recently practiced words
+
+Display useful progress statistics in the practice UI.
+
+Progress should persist across page refreshes.
+
+---
+
+# Keyboard Shortcuts
+
+Support:
+
+* `Space` → Reveal
+* `Right Arrow` → Got it
+* `R` → Again
+
+Do not trigger these shortcuts while the user is typing in an input, textarea, select, or other editable control.
+
+---
+
+# Reusable Components
+
+Structure the application using reusable components where appropriate.
+
+Examples:
+
+```text
+Navbar
+CategoryCard
+CategoryGrid
+VocabularyTable
+VocabularyCard
+VocabularyDetail
+SearchBox
+SearchResult
+MemoryCard
+PracticeControls
+ProgressStats
+```
+
+Avoid putting the entire application into one giant component.
+
+---
+
+# Utilities
+
+Create reusable utilities such as:
+
+```text
+getCategories()
+getWordsByCategory()
+searchVocabulary()
+getRandomWord()
+getWordById()
+```
+
+Also create appropriate normalization/parsing utilities.
+
+---
+
+# Design
+
+The visual style should feel like a polished modern language-learning application.
+
+Use:
+
+* clean typography
+* generous whitespace
+* rounded cards
+* subtle borders
+* subtle shadows
+* clear hierarchy
+* responsive layouts
+* accessible controls
+* good hover/focus states
+* attractive but restrained visual design
+
+Avoid making it look like a generic admin dashboard.
+
+The application name **Multilingual Final Boss** should have some personality while keeping the actual UI clean and usable.
+
+Support both desktop and mobile layouts.
+
+Consider light/dark mode if it can be implemented cleanly.
+
+---
+
+# Responsive Design
+
+The application must work well at:
+
+* desktop
+* laptop
+* tablet
+* mobile
+
+Tables should not overflow horizontally on small screens.
+
+Use responsive cards where appropriate.
+
+Navigation should collapse into a mobile-friendly menu.
+
+---
+
+# Project Structure
+
+Use a sensible structure such as:
+
+```text
+src/
+  components/
+  pages/
+  data/
+  utils/
+  types/
+  hooks/
+```
+
+Keep vocabulary data separate from UI logic.
+
+The CSV should remain the master data source.
+
+---
+
+# Future Extensibility
+
+Design the data and application architecture so the project can later support:
+
+* native Hindi script
+* native Odia script
+* native Bengali script
+* audio pronunciation
+* example sentences
+* multiple translations
+* synonyms
+* notes
+* favorites
+* spaced repetition
+* quizzes
+* more detailed statistics
+* import/export
+* additional languages
+
+Do not implement all of these now unless necessary.
+
+The current application should remain simple and focused.
+
+---
+
+# Error Handling
+
+Handle gracefully:
+
+* missing CSV
+* malformed CSV rows
+* empty vocabulary
+* blank translation fields
+* invalid category
+* LocalStorage unavailable
+* no search results
+* exhausted practice pool
+
+Do not crash the entire application because one translation cell is blank.
+
+---
+
+# Development Requirements
+
+Before making implementation decisions:
+
+1. Inspect the existing project structure.
+2. Inspect `package.json`.
+3. Inspect the existing CSV.
+4. Reuse existing configuration where appropriate.
+5. Do not unnecessarily replace working configuration.
+
+**This is a Node/React project. Do not introduce Python.**
+
+Use the project's existing npm scripts.
+
+For validation, run appropriate commands such as:
+
+```bash
+npm run build
+```
+
+Only run additional commands if they are actually defined in `package.json`.
+
+Do not run:
+
+```bash
+python -m unittest
+pytest
+python ...
+```
+
+---
+
+# Completion Requirements
+
+The result must be a **complete working project**, not a mockup or pseudocode.
+
+It must:
+
+* install successfully with npm
+* run successfully with `npm run dev`
+* build successfully with `npm run build`
+* load vocabulary from `language_vocabulary.csv`
+* dynamically generate categories
+* support global search
+* support vocabulary details
+* support memory practice
+* support practice directions
+* support category filtering
+* support repetition avoidance
+* persist progress in LocalStorage
+* work responsively on desktop and mobile
+
+Do not leave TODO placeholders for core functionality.
+
+Do not create fake vocabulary data to demonstrate functionality when the CSV already provides the real data.
+
+---
+
+# Critical Rules
+
+**1. `language_vocabulary.csv` is the source of truth.**
+
+**2. Do not hard-code vocabulary into React.**
+
+**3. Do not hard-code category names.**
+
+**4. This is React/TypeScript/Vite, not Python.**
+
+**5. Use Node.js/npm inside WSL.**
+
+**6. Inspect `package.json` before deciding how to test or build.**
+
+**7. Never use `python -m unittest`, pytest, or other Python tooling for this project.**
+
+**8. Adding a row to the CSV must automatically propagate throughout the application.**
+
+**9. Do not invent or silently modify vocabulary.**
+
+**10. Deliver a complete, runnable application rather than a conceptual implementation.**

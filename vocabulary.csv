@@ -1,0 +1,73 @@
+﻿category,english,hindi,hindi_script,odia,odia_script,bengali,bengali_script,chinese,pinyin
+pronouns,I,Main,मैं,Mu,ମୁଁ,Aami,আমি,我,wǒ
+pronouns,My,Mera,मेरा,Mora,ମୋର,Aamar,আমার,我的,wǒ de
+pronouns,Me,Mujhe,मुझे,Mate,ମୋତେ,Aamake,আমাকে,我,wǒ
+pronouns,We,Hum,हम,Aame,ଆମେ,Aamra,আমরা,我们,wǒmen
+pronouns,Our,Humara,हमारा,Aamara,ଆମର,Aamader,আমাদের,我们的,wǒmen de
+pronouns,Us,Humein,हमें,Aamaku,ଆମକୁ,Aamader ke,আমাদেরকে,我们,wǒmen
+pronouns,You,Tu,तुम,Tu,ତୁ,Tui,তুমি,你,nǐ
+pronouns,Your,Tera,तुम्हारा,Tora,ତୋର,Tor,তোমার,你的,nǐ de
+pronouns,You (object),Tujhe,तुम्हें,Tote,ତୋତେ,Toke,তোমাকে,你,nǐ
+demonstratives,This,Ye,यह,Eita/Eta,ଏଇଟା/ଏତା,Eita/Eta,এটা,这,zhè
+demonstratives,These,,ये,Eiguda,ଏଗୁଡ଼ିକ,Eigulo/Egulo,এগুলো,这些,zhèxiē
+demonstratives,That,Vo,वह,Seita/Seta,ସେଇଟା/ସେଟା,Oita/Ota/Sheita/Sheta,ওটা,那,nà
+demonstratives,Those,,वे,Seiguda,ସେଗୁଡ଼ିକ,Oigulo/Ogulo/Sheigulo/Shegulo,ওগুলো,那些,nàxiē
+quantifiers,All,Sab,सब,Sabu,ସବୁ,Shob,সব,都,dōu
+quantifiers,All of them,,सब,Sara,ସମସ୍ତେ,Shobgulo/Shob kota/Shara,সবগুলো,所有,suǒyǒu
+quantifiers,Any,Jo Koi,जो कोई,Jau kono,ଯେକୌଣସି,Jei kono,যেকোনো,任何,rènhé
+quantifiers,Any (plural),,कोई भी,Jauguda,ଯେକୌଣସି,Jeigulo,যেকোনো,任何,rènhé
+time,Now,Ab,अब,ebe,ଏବେ,Ekhon,এখন,现在,xiànzài
+time,When,Jab,जब,Jebe,କେବେ,Jokhon,যখন,什么时候,shénme shíhou
+time,Then,Tab,तब,Tebe,ତାପରେ,Tokhon,তখন,那么,nàme
+time,Like this,Aise,ऐसे,emiti,ଏମିତି,Ei Rokom,এইরকম,这样,zhèyàng
+time,Like that,Waise,वैसे,sem̐iti,ସେମିତି,Oi Rokom,ওইরকম,那样,nàyàng
+time,How,Kaise,कैसे,kemiti,କେମିତି,Ki Rokom,কেমন,怎么,zěnme
+connectors,And,Aur,और,aau,ଆଉ,Aar,আর,和,hé
+connectors,Or,Ya,या,Na/kimba,ନା/କିମ୍ବା,Baa/Naa/Kimba,বা,或者,huòzhě
+connectors,But,Par/Magar,पर/मगर,Kintu,କିନ୍ତୁ,Kintu,কিন্তু,但是,dànshì
+connectors,If,Agar,अगर,Jadi,ଯଦି,Jodi,যদি,如果,rúguǒ
+connectors,Then,Fir,फिर,Puni,ପୁଣି,Aabar,তারপর,然后,ránhòu
+connectors,So/Then,To Fir,तो फिर,Tahale,ତାହେଲେ,Tohole,তাহলে,那么,nàme
+time,From abc,abc - Se,abc - से,abc - ru,abcରୁ,abc - theke,abc থেকে,从 abc,cóng abc
+time,In abc,abc - Me,abc - में,abc - re,abcରେ,abc - madhye,abc-তে,在 abc 里,zài abc lǐ
+connectors,With,Saath,साथ,Saitha,ସହିତ,Sathe,সঙ্গে,和,hé
+question_words,What,Kya,क्या,Kaana,କଣ,Ki,কী,什么,shénme
+question_words,Who,Kaun,कौन,Kie,କିଏ,Ke,কে,谁,shéi
+question_words,Where,Kahan,कहाँ,Kouthi,କେଉଁଠି,Kothay,কোথায়,哪里,nǎlǐ
+question_words,When,Kab,कब,Jebe,କେବେ,Kokhon,কখন,什么时候,shénme shíhou
+question_words,Why,Kyun,क्यों,Kahinki,କାହିଁକି,Keno,কেন,为什么,wèishénme
+question_words,How,Kaise,कैसे,Kemiti,କେମିତି,Kibhabe,কীভাবে,怎么,zěnme
+question_words,Which,Kaunsa,कौन सा,Keunta,କେଉଁଟା,Kon,কোন,哪个,nǎge
+question_words,Whose,Kiska,किसका,Kahaar,କାହାର,Kar,কার,谁的,shéi de
+question_words,How much,Kitna,कितना,Keete,କେତେ,Koto,কত,多少,duōshao
+question_words,How many,Kitne,कितने,Keete,କେତେ,Koto,কতগুলো,多少,duōshao
+verbs,Eat,Kha,खा,Khaa,ଖାଅ,Khao,খাও,吃,chī
+verbs,Drink,Pi,पी,Pia,ପିଅ,Piyo,পিও,喝,hē
+verbs,Play,Khel,खेल,Khela,ଖେଳ,Khelo,খেলো,玩,wán
+verbs,Look,Dekh,देख,Dekha,ଦେଖ,Dekho,দেখো,看,kàn
+verbs,Sing,Gaa,गा,Gaa,ଗାଅ,Gao,গাও,唱,chàng
+verbs,Buy,Kharid,खरीद,Kiniba,କିଣିବା,Keno,কেনো,买,mǎi
+verbs,Go,Jao,जाओ,Jaa,ଯାଅ,Jao,যাও,去,qù
+verbs,Come,Aao,आओ,Aasa,ଆସ,Asho,আসো,来,lái
+verbs,Speak,Bolo,बोलो,Kuh,କୁହ,Bolo,বলো,说,shuō
+verbs,Give,Do,दो,Dia,ଦିଅ,Dao,দাও,给,gěi
+numbers,One,Ek,एक,Eka,ଏକ,Ek,এক,一,yī
+numbers,Two,Do,दो,Dui,ଦୁଇ,Dui,দুই,二,èr
+numbers,Three,Tin,तीन,Tini,ତିନି,Tin,তিন,三,sān
+numbers,Four,Chaar,चार,Chari,ଚାରି,Char,চার,四,sì
+numbers,Five,Paanch,पाँच,Paancha,ପାଞ୍ଚ,Pach,পাঁচ,五,wǔ
+numbers,Six,Chhah,छह,Chha,ଛଅ,Chhoy,ছয়,六,liù
+numbers,Seven,Saat,सात,Saat,ସାତ,Saat,সাত,七,qī
+numbers,Eight,Aath,आठ,Aatha,ଆଠ,Aat,আট,八,bā
+numbers,Nine,Nau,नौ,Nau,ନଅ,Noy,নয়,九,jiǔ
+numbers,Ten,Dasa,दस,Dasa,ଦଶ,Dosh,দশ,十,shí
+numbers,Eleven,Egyaarah,ग्यारह,Egarah,ଏଗାର,Egaro,এগারো,十一,shíyī
+numbers,Twelve,Baarah,बारह,Baarah,ବାର,Baro,বারো,十二,shí'èr
+numbers,Thirteen,Terah,तेरह,Terah,ତେର,Tero,তেরো,十三,shísān
+numbers,Fourteen,Chaudah,चौदह,Chaudah,ଚଉଦ,Chouddo,চৌদ্দ,十四,shísì
+numbers,Fifteen,Pandarah,पंद्रह,Pandara,ପନ୍ଦର,Ponero,পনেরো,十五,shíwǔ
+numbers,Sixteen,Solah,सोलह,Solah,ଷୋହଳ,Sholo,ষোলো,十六,shíliù
+numbers,Seventeen,Satarah,सत्रह,Satarah,ସତର,Sotero,সতেরো,十七,shíqī
+numbers,Eighteen,Athaarah,अठारह,Athaara,ଅଠର,Atharo,আঠারো,十八,shíbā
+numbers,Nineteen,Unnees,उन्नीस,Unneisa,ଉଣେଇଶ,Unish,উনিশ,十九,shíjiǔ
+numbers,Twenty,Bees,बीस,Kudi,କୋଡ଼ିଏ,Kuṛi,কুড়ি,二十,èrshí
