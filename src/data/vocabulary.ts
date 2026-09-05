@@ -1,4 +1,5 @@
 import type { VocabularyWord } from '../types'
+import vocabularyCsv from '../../vocabulary.csv?raw'
 
 const fields = ['category', 'english', 'hindi', 'hindi_script', 'odia', 'odia_script', 'bengali', 'bengali_script', 'chinese', 'pinyin'] as const
 
@@ -30,9 +31,7 @@ export function parseCsv(text: string): VocabularyWord[] {
 }
 
 export async function loadVocabulary(): Promise<VocabularyWord[]> {
-  const response = await fetch('/vocabulary.csv')
-  if (!response.ok) throw new Error('Vocabulary file could not be loaded.')
-  return parseCsv(await response.text())
+  return parseCsv(vocabularyCsv)
 }
 
 export const getCategories = (words: VocabularyWord[]) => [...new Set(words.map(word => word.category))].sort()
